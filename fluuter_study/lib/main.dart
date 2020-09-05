@@ -43,7 +43,7 @@ class _DicePageState extends State<DicePage> {
           Expanded(
             child: FlatButton(
               onPressed: () {
-                print('right');
+                print('rightDice');
               },
               child: Image.asset('images/dice$rightDiceNumber.png'),
             ),

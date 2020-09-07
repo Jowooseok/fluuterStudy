@@ -1,25 +1,35 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(Myapp());
-}
+void main() => runApp(
+      MaterialApp(
+        home: BallPage(),
+      ),
+    );
 
-class Myapp extends StatelessWidget {
+class BallPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.teal,
-        body: SafeArea(
-          child: Container(
-            height: 100.0,
-            width: 100.0,
-            margin: EdgeInsets.all(20.0),
-            color: Colors.white,
-            child: Text('Hello'),
-          ),
-        ),
+    return Scaffold(
+      backgroundColor: Colors.blue,
+      appBar: AppBar(
+        title: Text('Ask Me Anything'),
+        backgroundColor: Colors.blue.shade900,
       ),
+      body: Ball(),
+    );
+  }
+}
+
+class Ball extends StatefulWidget {
+  @override
+  _BallState createState() => _BallState();
+}
+
+class _BallState extends State<Ball> {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Image.asset('images/ball1.png'),
     );
   }
 }

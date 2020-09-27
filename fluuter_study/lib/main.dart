@@ -11,13 +11,13 @@ class Myapp extends StatelessWidget {
     player.play(a);
   }
 
-  Widget buildKey(int number) {
+  Expanded buildKey(Color colors, int number) {
     return (Expanded(
       child: FlatButton(
         onPressed: () {
           playSound('note$number.wav');
         },
-        color: Colors.red,
+        color: colors,
       ),
     ));
   }
@@ -31,13 +31,13 @@ class Myapp extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                buildKey(1),
-                buildKey(2),
-                buildKey(3),
-                buildKey(4),
-                buildKey(5),
-                buildKey(6),
-                buildKey(7),
+                buildKey(Colors.red, 1),
+                buildKey(Colors.orange, 2),
+                buildKey(Colors.yellow, 3),
+                buildKey(Colors.green, 4),
+                buildKey(Colors.blue, 5),
+                buildKey(Colors.blueAccent, 6),
+                buildKey(Colors.purple, 7),
               ],
             ),
           )),

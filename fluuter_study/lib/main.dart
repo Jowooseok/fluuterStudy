@@ -11,58 +11,36 @@ class Myapp extends StatelessWidget {
     player.play(a);
   }
 
+  Widget buildKey(int number) {
+    return (Expanded(
+      child: FlatButton(
+        onPressed: () {
+          playSound('note$number.wav');
+        },
+        color: Colors.red,
+      ),
+    ));
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+          backgroundColor: Colors.black,
           body: SafeArea(
-        child: Column(
-          children: [
-            FlatButton(
-              onPressed: () {
-                playSound('note1.wav');
-              },
-              color: Colors.red,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                buildKey(1),
+                buildKey(2),
+                buildKey(3),
+                buildKey(4),
+                buildKey(5),
+                buildKey(6),
+                buildKey(7),
+              ],
             ),
-            FlatButton(
-              onPressed: () {
-                playSound('note2.wav');
-              },
-              color: Colors.orange,
-            ),
-            FlatButton(
-              onPressed: () {
-                playSound('note3.wav');
-              },
-              color: Colors.yellow,
-            ),
-            FlatButton(
-              onPressed: () {
-                playSound('note4.wav');
-              },
-              color: Colors.green,
-            ),
-            FlatButton(
-              onPressed: () {
-                playSound('note5.wav');
-              },
-              color: Colors.blue,
-            ),
-            FlatButton(
-              onPressed: () {
-                playSound('note6.wav');
-              },
-              color: Colors.blueAccent,
-            ),
-            FlatButton(
-              onPressed: () {
-                playSound('note7.wav');
-              },
-              color: Colors.purple,
-            ),
-          ],
-        ),
-      )),
+          )),
     );
   }
 }

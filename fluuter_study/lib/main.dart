@@ -1,25 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:clima/screens/loading_screen.dart';
 
-void main() {
-  runApp(Myapp());
-}
+void main() => runApp(MyApp());
 
-class Myapp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.teal,
-        body: SafeArea(
-          child: Container(
-            height: 100.0,
-            width: 100.0,
-            margin: EdgeInsets.all(20.0),
-            color: Colors.white,
-            child: Text('Hello'),
-          ),
-        ),
-      ),
+      theme: ThemeData.dark(),
+      home: LoadingScreen(),
     );
   }
 }
